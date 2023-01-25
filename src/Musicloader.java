@@ -7,6 +7,8 @@ public class Musicloader {
 
     public static File sound;
     public static float value;
+public String pathname;
+
 
     Clip clip;
 
@@ -14,11 +16,24 @@ public class Musicloader {
         value = -30f; //Hier wird die Lautstärke eingestellt
     }
 
-    public void load() {
+    public void loadMenuMusic() {
         //Hier insert File
-        sound = new File("Sounds\\Menu Songs\\MenuSong2 - Dreamland.wav");
+        sound = new File("sounds\\Menu Songs\\MenuSongTestSilence.wav");
 
+        sound = new File(pathname);
     }
+
+
+
+    //Methode die den jeweiligen Pfad zurückgibt
+    public String pathFinder(String path){
+
+        pathname=path;
+        return pathname;
+    }
+
+
+
 
     public void play(File sound) {
 
