@@ -38,6 +38,8 @@ public class Buttons {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Logik, was soll passieren, wenn ich auf den Credits Button klicke?
+                Musicloader musicloaderCreditMusic = new Musicloader();
+                musicloaderCreditMusic.loadCreditMusic();
                 JFrame frame = new JFrame("Credits");
                 JLabel label = new JLabel("Sadio Mane");
                 label.setHorizontalAlignment(SwingConstants.CENTER);
