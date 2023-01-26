@@ -24,9 +24,15 @@ public class Musicloader {
         play(sound);
         clip.loop(2);
     }
+    public void loadCreditMusic() { //CREDITMUSIC
+        sound = new File("sounds\\CreditsMusic\\horse.wav");
+        play(sound);
+        clip.loop(2);
+    }
     public void loadGameMusic() { //INGAMEMUSIC
         sound = new File("sounds\\Game Songs\\GameSongfinalfinal.wav");
         play(sound);
+        clip.loop(100);
     }
     public void loadEatSound() { //EATSOUND
         sound = new File("sounds\\Eat Sound\\Eat2 44k.wav");
@@ -39,7 +45,6 @@ public class Musicloader {
     public void loadGameOverSound() { //GAME-OVERSOUND
         sound = new File("sounds\\Game Over Sounds\\explosion 11k.wav");
         play(sound);
-        clip.loop(100);
     }
     public void loadSelectSound() { //SELECTSOUND
         sound = new File("sounds\\Select Sound\\Select 11k.wav");
