@@ -13,7 +13,7 @@ public class Musicloader {
     Clip clip;
 
     public Musicloader() {
-        value = -35f; //Hier wird die Lautstärke eingestellt
+        value = -25f; //Hier wird die Lautstärke eingestellt
     }
 
 

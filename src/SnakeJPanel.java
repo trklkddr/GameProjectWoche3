@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.Random;
 public class SnakeJPanel extends JPanel implements ActionListener{
     Musicloader musicloader = new Musicloader();
+    Musicloader musicloaderGameMusic = new Musicloader();
+
+    Musicloader musicloaderGameOverSound = new Musicloader();
+
+    Musicloader musicloaderMenueMusic = new Musicloader();
     static final int SpielBreite =550;
     static final int SpielHoehe =550;
     static final int SpielEinheitGroesse =25;
@@ -66,15 +71,11 @@ public class SnakeJPanel extends JPanel implements ActionListener{
             graphic.fillRect(0, 0, SpielEinheitGroesse /4, SpielHoehe - SpielEinheitGroesse);
             graphic.fillRect(SpielBreite - SpielEinheitGroesse, 0, SpielEinheitGroesse /4, SpielHoehe - SpielEinheitGroesse);
 
-
         } else if (firstRun) {
             startMenue(graphic);
             firstRun = false;
         } else {
 
-            for (int j =0;j<=snakeGroesse;j++){
-                musicloader.clip.stop();
-            }
             gameOver(graphic);
         }
 
@@ -114,13 +115,9 @@ public class SnakeJPanel extends JPanel implements ActionListener{
             snakeGroesse++;
             score++;
             foodPosition();
-            Timer timer1 =new Timer(210, null);
-            timer1.start();
-            musicloader.stopEatSound();
-
         }
     }
-    public void spielVerloren() {
+    public void spielVerlorenKonditionen() {
         for (int i = snakeGroesse; i>0; i--)
         {if((snake_x[0]== snake_x[i])&&(snake_y[0]== snake_y[i]))
         {
@@ -134,21 +131,20 @@ public class SnakeJPanel extends JPanel implements ActionListener{
         {    SpielLaeuft = false;}
         if (snake_y[0] > SpielHoehe)
         {    SpielLaeuft = false;}
-        if(!SpielLaeuft)
-        {  timer.stop();}
+        if(!SpielLaeuft) {
+            timer.stop();
+            musicloaderGameMusic.stopGameMusic();
+        }
     }
 
     public void startMenue(Graphics graphic) {
         graphic.setFont(new Font("", Font.BOLD, 40));
         FontMetrics font_me3 = getFontMetrics(graphic.getFont());
         graphic.drawString("Press space to start", (SpielBreite - font_me3.stringWidth("Press Space to start")) / 2, SpielHoehe / 2-150);
-        musicloader.loadMenuMusic();
+        musicloaderMenueMusic.loadMenuMusic();
     }
     public void gameOver(Graphics graphic) {
-
-        musicloader.stopEatSound();
-        musicloader.stopGameMusic();
-        musicloader.loadGameOverSound();
+        musicloaderGameOverSound.loadGameOverSound();
         graphic.setFont(new Font("", Font.BOLD, 80));
         FontMetrics font_me2 = getFontMetrics(graphic.getFont());
         graphic.drawString("GAME OVER", (SpielBreite - font_me2.stringWidth("GAME OVER"))/2,
@@ -195,9 +191,10 @@ public class SnakeJPanel extends JPanel implements ActionListener{
                         Arrays.fill(snake_x,0);
                         Arrays.fill(snake_y,0);
                         spielStart();
-                        musicloader.clip.stop();
+                        //musicloaderGameOverSound.stopGameMusic();
+                        musicloaderMenueMusic.stopGameMusic();
                         musicloader.loadStartSound();
-                        musicloader.loadGameMusic();
+                        musicloaderGameMusic.loadGameMusic();
                     }
                     break;
             }
@@ -209,7 +206,7 @@ public class SnakeJPanel extends JPanel implements ActionListener{
         if (SpielLaeuft) {
             move();
             foodGegessen();
-            spielVerloren();
+            spielVerlorenKonditionen();
         }
         repaint();
     }
