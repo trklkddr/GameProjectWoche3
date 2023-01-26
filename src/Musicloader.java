@@ -7,13 +7,13 @@ public class Musicloader {
 
     public static File sound;
     public static float value;
-public String pathname;
+    public String pathname;
 
 
     Clip clip;
 
     public Musicloader() {
-        value = -30f; //Hier wird die Lautstärke eingestellt
+        value = -35f; //Hier wird die Lautstärke eingestellt
     }
 
 
@@ -21,18 +21,22 @@ public String pathname;
     //METHODEN FÜR DAS LADEN DER JEWEILIGEN SOUNDS
     public void loadMenuMusic() { //MENUMUSIC
         sound = new File("sounds\\Menu Songs\\MenuSongTestSilence.wav");
+        play(sound);
     }
     public void loadGameMusic() { //INGAMEMUSIC
         sound = new File("sounds\\Menu Songs\\GameSongTestSilence.wav");
+        play(sound);
     }
     public void loadEatSound() { //EATSOUND
         sound = new File("sounds\\Eat Sound\\Eat2 44k.wav");
+        play(sound);
     }
     public void loadExitSound() { //EXITSOUND
         sound = new File("sounds\\Exit Sounds\\Exit 11k.wav");
     }
     public void loadGameOverSound() { //GAME-OVERSOUND
         sound = new File("sounds\\Game Over Sounds\\explosion 11k.wav");
+        play(sound);
     }
     public void loadSelectSound() { //SELECTSOUND
         sound = new File("sounds\\Select Sound\\Select 11k.wav");

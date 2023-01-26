@@ -14,11 +14,5 @@ public class Snake extends JFrame {
         this.setLocationRelativeTo(null); //Das Frame soll mittig angezeigt werden
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
-
-
-
     }
-
-
-
 }

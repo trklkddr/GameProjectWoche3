@@ -107,6 +107,8 @@ public class SnakeJPanel extends JPanel implements ActionListener{
     }
     public void foodGegessen() {
         if((snake_x[0]== food_x)&&(snake_y[0]== food_y)){
+            Musicloader musicloader = new Musicloader();
+            musicloader.loadEatSound();
             snakeGroesse++;
             score++;
             foodPosition();
@@ -134,9 +136,12 @@ public class SnakeJPanel extends JPanel implements ActionListener{
         graphic.setFont(new Font("", Font.BOLD, 40));
         FontMetrics font_me3 = getFontMetrics(graphic.getFont());
         graphic.drawString("Press space to start", (SpielBreite - font_me3.stringWidth("Press Space to start")) / 2, SpielHoehe / 2-150);
-
+        //Musicloader musicloader = new Musicloader();
+        //musicloader.loadGameMusic();
     }
     public void gameOver(Graphics graphic) {
+        Musicloader musicloader = new Musicloader();
+        musicloader.loadGameOverSound();
         graphic.setFont(new Font("", Font.BOLD, 80));
         FontMetrics font_me2 = getFontMetrics(graphic.getFont());
         graphic.drawString("GAME OVER", (SpielBreite - font_me2.stringWidth("GAME OVER"))/2,
