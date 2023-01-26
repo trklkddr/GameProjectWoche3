@@ -1,0 +1,44 @@
+Protokoll Tag 1:
+
+Tarik, Christian, Nikita und Baco.
+
+Zu Beginn wird die Aufgabenstellung in der Gruppe besprochen und es wird gemeinsam gebrainstromed:
+
+Dabei kommen folgende Fragen auf, die wir im Verlauf des Tages beantworten möchten:
+
+- für welches Spiel entscheiden wir uns?
+- wo liegt der Rahmen unseres Spiels? (Soll es ein einfaches Snake Game sein, oder wollen wir mehrere Level implementieren?)
+- jeder einzelne muss sich mit JavaFX vertraut machen
+- wir wollen Musik haben für unser Spiel, wie und für welche Spielszenen kann die Musik verwendet werden?
+
+Wir haben uns alle relativ schnell dafür entschieden, dass wir Snake entwickeln möchten.
+
+Darüber hinaus haben wir uns alle darauf geeinigt, dass wir Swing, statt JavaFX verwenden.
+
+Im Anschluss werden die Aufgaben verteilt:
+
+Christian übernimmt die Musik:
+
+- Erstellen von Sounds
+- Überlegung, welcher Sound in welcher Szene eingeführt wird? (beispielsweise ein Schmatzen, wenn die Schlange die Maus frisst etc.)
+- Überlegung, auf welche Weise diese Sounds in Swing implementiert und eingesetzt werden können.
+
+Tarik übernimmt unser Grundgerüst und die Spielelogik:
+
+- Das Aufräumen der Repository, sodass unser Projekt "aufgeräumt" ist.
+- Das Entwickeln des Spiels
+
+Nikita übernimmt das Gamedesign:
+- Überlegung, welche Funktionen unser Spiel haben soll, wie unser Spielmenü aussehen soll.
+- Überlegung, ob wir irgendwelche Special Features implementieren möchten (z.B. Highscore, verschiedene Schwierigkeitsstufen etc.)
+
+Baco übernimmt Swing:
+- Was ist Swing?
+- Welche Möglichkeiten bringt Swing mit sich und was alles ist mit Swing realisierbar?
+- Wie funktioniert der Umgang mit Swing?
+
+Ziel war es, dass wir am Ende des Tages ein einzelnes Frame haben, auf das eine Figur abgebildet wird, das sich durch Kommandos bewegen lässt.
+
+
+
+Ende Tag1.
