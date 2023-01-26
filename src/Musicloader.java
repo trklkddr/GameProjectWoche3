@@ -11,6 +11,8 @@ public class Musicloader {
     public static float value;
     public String pathname;
 
+    public boolean creditMusicOn = false;
+
 
     Clip clip;
 
@@ -60,6 +62,14 @@ public class Musicloader {
         sound = new File(randomizer());
         play(sound);
         clip.loop(2);
+        creditMusicOn = true;
+    }
+
+    public void stopWAVinCreditMusic() { //STOPWAV
+        if (creditMusicOn == true) {
+            stopWAV();
+            creditMusicOn = false;
+        } else loadCreditMusic();
     }
 
     public void stopWAV() { //STOPWAV

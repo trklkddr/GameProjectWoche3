@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Buttons {
-    public static void main(String[] args) {
+    public static void gameMenue() {
         // Erstellen eines neuen JFrames
         JFrame frame = new JFrame("Snake");
 
@@ -48,7 +48,7 @@ public class Buttons {
                 muteButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        //Christians Logik
+                        musicloaderCreditMusic.stopWAVinCreditMusic();
                     }
                 });
                 tamayoButton.addActionListener(new ActionListener() {
@@ -59,9 +59,9 @@ public class Buttons {
                 });
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.add(muteButton);
-                frame.add (muteButton);
-                muteButton.setBounds(0,200,150,70);
-                frame.add (tamayoButton);
+                frame.add(muteButton);
+                muteButton.setBounds(0, 200, 150, 70);
+                frame.add(tamayoButton);
                 tamayoButton.setBounds(150, 200, 150, 70);
                 JTextArea textArea = new JTextArea();
                 textArea.setLineWrap(true); // Enable line wrapping
