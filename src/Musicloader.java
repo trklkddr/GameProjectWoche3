@@ -69,7 +69,7 @@ public class Musicloader {
     public String randomizer() {
 
         Random random = ThreadLocalRandom.current();
-        int number = 1 + random.nextInt(5);
+        int number = 1 + random.nextInt(6);
         switch (number) {
             case 1:
                 return "sounds\\CreditsMusic\\keyboard.wav";
@@ -84,8 +84,6 @@ public class Musicloader {
             case 6:
                 return "sounds\\CreditsMusic\\rick.wav";
         }
-
-
         return null;
     }
 
