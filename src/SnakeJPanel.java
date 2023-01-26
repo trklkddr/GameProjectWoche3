@@ -6,9 +6,7 @@ import java.util.Random;
 public class SnakeJPanel extends JPanel implements ActionListener{
     Musicloader musicloader = new Musicloader();
     Musicloader musicloaderGameMusic = new Musicloader();
-
     Musicloader musicloaderGameOverSound = new Musicloader();
-
     Musicloader musicloaderMenueMusic = new Musicloader();
     static final int SpielBreite =550;
     static final int SpielHoehe =550;
