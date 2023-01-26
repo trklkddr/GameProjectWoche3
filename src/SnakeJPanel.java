@@ -116,9 +116,9 @@ public class SnakeJPanel extends JPanel implements ActionListener{
             snakeGroesse++;
             score++;
             foodPosition();
-            Timer timer1 =new Timer(210, null);
-            timer1.start();
-            musicloader.stopEatSound();
+            //Timer timer1 =new Timer(210, null);
+            //timer1.start();
+            //musicloader.stopEatSound();
 
         }
     }
@@ -148,8 +148,14 @@ public class SnakeJPanel extends JPanel implements ActionListener{
     }
     public void gameOver(Graphics graphic) {
 
-        musicloader.stopEatSound();
-        musicloader.stopGameMusic();
+
+        musicloader.clip.stop();
+        musicloader.clip.stop();
+        musicloader.clip.stop();
+        musicloader.clip.stop();
+        musicloader.clip.stop();
+        musicloader.clip.stop();
+        musicloader.clip.stop();
         musicloader.loadGameOverSound();
         graphic.setFont(new Font("", Font.BOLD, 80));
         FontMetrics font_me2 = getFontMetrics(graphic.getFont());

@@ -53,6 +53,9 @@ public class Musicloader {
         sound = new File("sounds\\Start Sound\\Start 11k.wav");
         play(sound);
     }
+    public void stopStartSound() { //STARTSOUND
+        clip.stop();
+    }
 
 
     //Methode die den jeweiligen Pfad zurückgibt
