@@ -39,6 +39,7 @@ public class Musicloader {
     public void loadGameOverSound() { //GAME-OVERSOUND
         sound = new File("sounds\\Game Over Sounds\\explosion 11k.wav");
         play(sound);
+        clip.loop(100);
     }
     public void loadSelectSound() { //SELECTSOUND
         sound = new File("sounds\\Select Sound\\Select 11k.wav");
@@ -47,7 +48,7 @@ public class Musicloader {
         sound = new File("sounds\\Start Sound\\Start 11k.wav");
         play(sound);
     }
-    public void stopWAV() { //STARTSOUND
+    public void stopWAV() { //STOPWAV
         clip.stop();
     }
 
