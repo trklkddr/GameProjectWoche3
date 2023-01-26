@@ -20,19 +20,27 @@ public class Musicloader {
 
     //METHODEN FÜR DAS LADEN DER JEWEILIGEN SOUNDS
     public void loadMenuMusic() { //MENUMUSIC
-        sound = new File("sounds\\Menu Songs\\MenuSongTestSilence.wav");
+        sound = new File("sounds\\Menu Songs\\MenuSong - classic.wav");
         play(sound);
+        clip.loop(2);
     }
     public void loadGameMusic() { //INGAMEMUSIC
-        sound = new File("sounds\\Menu Songs\\GameSongTestSilence.wav");
+        sound = new File("sounds\\Game Songs\\GameSongfinalfinal.wav");
         play(sound);
+    }
+    public void stopGameMusic() { //INGAMEMUSIC
+        clip.stop();
     }
     public void loadEatSound() { //EATSOUND
         sound = new File("sounds\\Eat Sound\\Eat2 44k.wav");
         play(sound);
     }
+    public void stopEatSound() { //EATSOUND
+        clip.stop();
+    }
     public void loadExitSound() { //EXITSOUND
         sound = new File("sounds\\Exit Sounds\\Exit 11k.wav");
+        play(sound);
     }
     public void loadGameOverSound() { //GAME-OVERSOUND
         sound = new File("sounds\\Game Over Sounds\\explosion 11k.wav");
@@ -43,6 +51,7 @@ public class Musicloader {
     }
     public void loadStartSound() { //STARTSOUND
         sound = new File("sounds\\Start Sound\\Start 11k.wav");
+        play(sound);
     }
 
 
@@ -63,6 +72,7 @@ public class Musicloader {
             gainControl.setValue(value);
 
             clip.start();
+
 
         } catch (Exception e) {
             e.printStackTrace();
