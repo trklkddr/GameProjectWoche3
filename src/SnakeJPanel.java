@@ -4,6 +4,7 @@ import java.awt.event.*;
 import java.util.Arrays;
 import java.util.Random;
 public class SnakeJPanel extends JPanel implements ActionListener{
+    Musicloader musicloader = new Musicloader();
     static final int SpielBreite =550;
     static final int SpielHoehe =550;
     static final int SpielEinheitGroesse =25;
@@ -70,6 +71,10 @@ public class SnakeJPanel extends JPanel implements ActionListener{
             startMenue(graphic);
             firstRun = false;
         } else {
+
+            for (int j =0;j<=snakeGroesse;j++){
+                musicloader.clip.stop();
+            }
             gameOver(graphic);
         }
 
@@ -107,11 +112,14 @@ public class SnakeJPanel extends JPanel implements ActionListener{
     }
     public void foodGegessen() {
         if((snake_x[0]== food_x)&&(snake_y[0]== food_y)){
-            Musicloader musicloader = new Musicloader();
             musicloader.loadEatSound();
             snakeGroesse++;
             score++;
             foodPosition();
+            Timer timer1 =new Timer(210, null);
+            timer1.start();
+            musicloader.stopEatSound();
+
         }
     }
     public void spielVerloren() {
@@ -136,11 +144,12 @@ public class SnakeJPanel extends JPanel implements ActionListener{
         graphic.setFont(new Font("", Font.BOLD, 40));
         FontMetrics font_me3 = getFontMetrics(graphic.getFont());
         graphic.drawString("Press space to start", (SpielBreite - font_me3.stringWidth("Press Space to start")) / 2, SpielHoehe / 2-150);
-        //Musicloader musicloader = new Musicloader();
-        //musicloader.loadGameMusic();
+        musicloader.loadMenuMusic();
     }
     public void gameOver(Graphics graphic) {
-        Musicloader musicloader = new Musicloader();
+
+        musicloader.stopEatSound();
+        musicloader.stopGameMusic();
         musicloader.loadGameOverSound();
         graphic.setFont(new Font("", Font.BOLD, 80));
         FontMetrics font_me2 = getFontMetrics(graphic.getFont());
@@ -188,6 +197,9 @@ public class SnakeJPanel extends JPanel implements ActionListener{
                         Arrays.fill(snake_x,0);
                         Arrays.fill(snake_y,0);
                         spielStart();
+                        musicloader.clip.stop();
+                        musicloader.loadStartSound();
+                        musicloader.loadGameMusic();
                     }
                     break;
             }
