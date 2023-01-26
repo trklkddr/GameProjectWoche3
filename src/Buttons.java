@@ -39,6 +39,8 @@ public class Buttons {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Logik, was soll passieren, wenn ich auf den Credits Button klicke?
+                Musicloader musicloaderCreditMusic = new Musicloader();
+                musicloaderCreditMusic.loadCreditMusic();
                 JFrame frame = new JFrame("Credits");
                 frame.setSize(300, 300);
                 JButton muteButton = new JButton("mute");

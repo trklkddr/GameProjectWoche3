@@ -11,6 +11,8 @@ public class SnakeJPanel extends JPanel implements ActionListener{
     Musicloader musicloaderGameOverSound = new Musicloader();
 
     Musicloader musicloaderMenueMusic = new Musicloader();
+
+
     static final int SpielBreite =550;
     static final int SpielHoehe =550;
     static final int SpielEinheitGroesse =25;
@@ -53,6 +55,8 @@ public class SnakeJPanel extends JPanel implements ActionListener{
     }
 
 
+
+
     public void draw(Graphics graphic) {
         if(SpielLaeuft){
             graphic.fillOval(food_x, food_y, SpielEinheitGroesse, SpielEinheitGroesse);
@@ -76,7 +80,6 @@ public class SnakeJPanel extends JPanel implements ActionListener{
             startMenue(graphic);
             firstRun = false;
         } else {
-
             gameOver(graphic);
         }
 
