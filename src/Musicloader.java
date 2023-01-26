@@ -7,6 +7,8 @@ public class Musicloader {
 
     public static File sound;
     public static float value;
+public String pathname;
+
 
     Clip clip;
 
@@ -14,11 +16,39 @@ public class Musicloader {
         value = -30f; //Hier wird die Lautstärke eingestellt
     }
 
-    public void load() {
-        //Hier insert File
-        sound = new File("Sounds\\Menu Songs\\MenuSong2 - Dreamland.wav");
 
+
+    //METHODEN FÜR DAS LADEN DER JEWEILIGEN SOUNDS
+    public void loadMenuMusic() { //MENUMUSIC
+        sound = new File("sounds\\Menu Songs\\MenuSongTestSilence.wav");
     }
+    public void loadGameMusic() { //INGAMEMUSIC
+        sound = new File("sounds\\Menu Songs\\GameSongTestSilence.wav");
+    }
+    public void loadEatSound() { //EATSOUND
+        sound = new File("sounds\\Eat Sound\\Eat2 44k.wav");
+    }
+    public void loadExitSound() { //EXITSOUND
+        sound = new File("sounds\\Exit Sounds\\Exit 11k.wav");
+    }
+    public void loadGameOverSound() { //GAME-OVERSOUND
+        sound = new File("sounds\\Game Over Sounds\\explosion 11k.wav");
+    }
+    public void loadSelectSound() { //SELECTSOUND
+        sound = new File("sounds\\Select Sound\\Select 11k.wav");
+    }
+    public void loadStartSound() { //STARTSOUND
+        sound = new File("sounds\\Start Sound\\Start 11k.wav");
+    }
+
+
+    //Methode die den jeweiligen Pfad zurückgibt
+    public String pathFinder(String path){
+        pathname=path;
+        return pathname;
+    }
+
+
 
     public void play(File sound) {
 
