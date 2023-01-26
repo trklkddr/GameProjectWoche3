@@ -7,11 +7,13 @@ public class Buttons {
         // Erstellen eines neuen JFrames
         JFrame frame = new JFrame("Snake");
 
-        // Erstellen Sie zwei Buttons mit den Namen "Open Window" und "Exit"
+        // Erstellen Sie zwei Buttons mit den Namen "Start Game" und "Exit"
         JButton openButton = new JButton("Start Game");
         JButton exitButton = new JButton("Exit");
+        JButton creditButton = new JButton("Credits");
 
-        //  ActionListener für den "Open Window" Button, der beim Klicken auf den Button ausgelöst wird
+
+        //  ActionListener für den "" Button, der beim Klicken auf den Button ausgelöst wird
         openButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -32,10 +34,25 @@ public class Buttons {
                 System.exit(0);
             }
         });
+        creditButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //Logik, was soll passieren, wenn ich auf den Credits Button klicke?
+                JFrame frame = new JFrame("Credits");
+                JLabel label = new JLabel("Sadio Mane");
+                label.setHorizontalAlignment(SwingConstants.CENTER);
+                frame.add(label, BorderLayout.CENTER);
+                frame.setSize(300, 100);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+            }
+        });
+
 
         // Fügen Sie die Buttons dem JFrame hinzu
         frame.add(openButton);
         frame.add(exitButton);
+        frame.add(creditButton);
         frame.setLayout(new FlowLayout());
         // Setzen Sie die Größe des JFrame
         frame.setSize(SnakeJPanel.SpielBreite, SnakeJPanel.SpielHoehe);
