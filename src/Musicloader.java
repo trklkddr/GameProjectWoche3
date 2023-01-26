@@ -13,7 +13,7 @@ public class Musicloader {
     Clip clip;
 
     public Musicloader() {
-        value = -35f; //Hier wird die Lautstärke eingestellt
+        value = -25f; //Hier wird die Lautstärke eingestellt
     }
 
 
@@ -28,15 +28,9 @@ public class Musicloader {
         sound = new File("sounds\\Game Songs\\GameSongfinalfinal.wav");
         play(sound);
     }
-    public void stopGameMusic() { //INGAMEMUSIC
-        clip.stop();
-    }
     public void loadEatSound() { //EATSOUND
         sound = new File("sounds\\Eat Sound\\Eat2 44k.wav");
         play(sound);
-    }
-    public void stopEatSound() { //EATSOUND
-        clip.stop();
     }
     public void loadExitSound() { //EXITSOUND
         sound = new File("sounds\\Exit Sounds\\Exit 11k.wav");
@@ -53,7 +47,7 @@ public class Musicloader {
         sound = new File("sounds\\Start Sound\\Start 11k.wav");
         play(sound);
     }
-    public void stopStartSound() { //STARTSOUND
+    public void stopWAV() { //STARTSOUND
         clip.stop();
     }
 
@@ -67,7 +61,6 @@ public class Musicloader {
 
 
     public void play(File sound) {
-
         try {
             clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(sound));
