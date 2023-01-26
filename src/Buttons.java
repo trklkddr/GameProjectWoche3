@@ -15,6 +15,7 @@ public class Buttons {
         openButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
                 new Snake();
                 // An dieser Stelle soll Tariks Spiel implementiert werden
                /* JFrame newFrame = new JFrame("New Window");
@@ -27,7 +28,7 @@ public class Buttons {
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Beenden Sie das Programm
+
                 System.exit(0);
             }
         });
@@ -37,12 +38,11 @@ public class Buttons {
         frame.add(exitButton);
         frame.setLayout(new FlowLayout());
         // Setzen Sie die Größe des JFrame
-        frame.setSize(400, 100);
+        frame.setSize(SnakeJPanel.SpielBreite, SnakeJPanel.SpielHoehe);
 
         // Setzen Sie die Position des JFrame auf die Mitte des Bildschirms
         frame.setLocationRelativeTo(null);
 
-        // Setzen Sie das Verhalten des JFrame beim Schließen auf "EXIT_ON_CLOSE"
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Machen Sie das JFrame sichtbar
