@@ -73,8 +73,6 @@ public class SnakeJPanel extends JPanel implements ActionListener{
             gameOver(graphic);
         }
 
-
-
     }
     public void move() {
         for(int i = snakeGroesse; i>0; i--){

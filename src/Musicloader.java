@@ -55,7 +55,6 @@ public class Musicloader {
 
 
     public void play(File sound) {
-
         try {
             clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(sound));
