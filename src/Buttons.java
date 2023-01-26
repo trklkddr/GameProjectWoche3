@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -39,11 +40,38 @@ public class Buttons {
             public void actionPerformed(ActionEvent e) {
                 //Logik, was soll passieren, wenn ich auf den Credits Button klicke?
                 JFrame frame = new JFrame("Credits");
-                JLabel label = new JLabel("Sadio Mane");
-                label.setHorizontalAlignment(SwingConstants.CENTER);
-                frame.add(label, BorderLayout.CENTER);
-                frame.setSize(300, 100);
+                frame.setSize(300, 300);
+                JButton muteButton = new JButton("mute");
+                JButton tamayoButton = new JButton("Tamayo Button");
+                muteButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        //Christians Logik
+                    }
+                });
+                tamayoButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        frame.setVisible(false); //Musik müsste hier stoppen, wenn Fenster geschlossen wird
+                    }
+                });
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.add(muteButton);
+                frame.add (muteButton);
+                muteButton.setBounds(0,200,150,70);
+                frame.add (tamayoButton);
+                tamayoButton.setBounds(150, 200, 150, 70);
+                JTextArea textArea = new JTextArea();
+                textArea.setLineWrap(true); // Enable line wrapping
+                textArea.setWrapStyleWord(true); // Wrap at word boundaries
+                textArea.setColumns(20); // Set the number of columns
+                textArea.setRows(10); // Set the number of rows
+                JScrollPane scrollPane = new JScrollPane(textArea);
+
+
+                String text = "Nikita Smirnov\nTarik Alkad-Dri\nChristian Lange\nBacdasch Zafaryar";
+                textArea.setText(text);
+                frame.add(scrollPane, BorderLayout.CENTER);
                 frame.setVisible(true);
             }
         });
