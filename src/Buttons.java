@@ -49,12 +49,14 @@ public class Buttons {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         //Christians Logik
+                        musicloaderCreditMusic.setValue(-100f);
                     }
                 });
                 tamayoButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        frame.setVisible(false); //Musik müsste hier stoppen, wenn Fenster geschlossen wird
+                        frame.setVisible(false);
+                        musicloaderCreditMusic.stopWAV();//Musik müsste hier stoppen, wenn Fenster geschlossen wird
                     }
                 });
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

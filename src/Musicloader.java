@@ -8,9 +8,13 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Musicloader {
 
     public static File sound;
+
+
+
     public static float value;
     public String pathname;
 
+    //private float mute = -100f;
 
     Clip clip;
 
@@ -112,5 +116,8 @@ public class Musicloader {
 
     }
 
+    public void setValue(float value) {
+        Musicloader.value = value;
+    }
 
 }
