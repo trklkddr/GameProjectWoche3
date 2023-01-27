@@ -7,7 +7,8 @@ Zu Beginn wird die Aufgabenstellung in der Gruppe besprochen und es wird gemeins
 Dabei kommen folgende Fragen auf, die wir im Verlauf des Tages beantworten möchten:
 
 - für welches Spiel entscheiden wir uns?
-- wo liegt der Rahmen unseres Spiels? (Soll es ein einfaches Snake Game sein, oder wollen wir mehrere Level implementieren?)
+- wo liegt der Rahmen unseres Spiels? (Soll es ein einfaches Snake Game sein, oder wollen wir mehrere Level
+  implementieren?)
 - jeder einzelne muss sich mit JavaFX vertraut machen
 - wir wollen Musik haben für unser Spiel, wie und für welche Spielszenen kann die Musik verwendet werden?
 
@@ -20,25 +21,89 @@ Im Anschluss werden die Aufgaben verteilt:
 Christian übernimmt die Musik:
 
 - Erstellen von Sounds
-- Überlegung, welcher Sound in welcher Szene eingeführt wird? (beispielsweise ein Schmatzen, wenn die Schlange die Maus frisst etc.)
+- Überlegung, welcher Sound in welcher Szene eingeführt wird? (beispielsweise ein Schmatzen, wenn die Schlange
+  die Maus frisst etc.)
 - Überlegung, auf welche Weise diese Sounds in Swing implementiert und eingesetzt werden können.
+
 
 Tarik übernimmt unser Grundgerüst und die Spielelogik:
 
 - Das Aufräumen der Repository, sodass unser Projekt "aufgeräumt" ist.
 - Das Entwickeln des Spiels
 
+
 Nikita übernimmt das Gamedesign:
+
 - Überlegung, welche Funktionen unser Spiel haben soll, wie unser Spielmenü aussehen soll.
-- Überlegung, ob wir irgendwelche Special Features implementieren möchten (z.B. Highscore, verschiedene Schwierigkeitsstufen etc.)
+- Überlegung, ob wir irgendwelche Special Features implementieren möchten (z.B. Highscore,
+  verschiedene Schwierigkeitsstufen etc.)
+
 
 Baco übernimmt Swing:
+
 - Was ist Swing?
 - Welche Möglichkeiten bringt Swing mit sich und was alles ist mit Swing realisierbar?
 - Wie funktioniert der Umgang mit Swing?
 
-Ziel war es, dass wir am Ende des Tages ein einzelnes Frame haben, auf das eine Figur abgebildet wird, das sich durch Kommandos bewegen lässt.
+
+Ziel war es, dass wir am Ende des Tages ein einzelnes Frame haben, auf das eine Figur abgebildet wird, das sich durch
+Kommandos bewegen lässt.
 
 
 
 Ende Tag1.
+
+Protokoll Tag2:
+
+Zu Beginn treffen wir uns alle gemeinsam um 08:30 in unserer Gruppe und pushen unsere branches, sodass jeder auf
+dem neuesten Stand ist.
+
+Durch Tariks Nachtschicht bis 4 Uhr morgens haben wir alle eine Main, die ein simples Snake Spiel aufruft.
+
+- Das Spiel läuft ohne Probleme
+- Das Spiel zeigt einen Score an
+
+Gemeinsam in der Gruppe werden die Fortschritte besprochen und es werden neue Aufgaben verteilt, die im besten Fall bis
+zur Mittagspause fertiggestellt werden sollten.
+
+Darüber hinaus wird jetzt schon das Tagesziel gesetzt:
+
+-Am Ende des Tages möchten wir ein fertiges Snake Spiel haben, sodass wir uns morgen nur noch um Kleinigkeiten sowie
+um die Präsentation kümmern können.
+
+
+Christian übernimmt weiterhin das Managen der Musik:
+
+- Kernaufgabe: wie kann die Musik mit Hilfe von Swing implementiert werden.
+- welche Schwierigkeiten ergeben sich?
+
+
+Tarik übernimmt das weitere Entwickeln des Spiels:
+
+- Zusatzfeatures
+- Nikita mit Git unter die Arme greifen, sodass auch er auf den neuesten Stand ist mit seiner Branch
+
+
+Nikita übernimmt weiterhin weitere Designideen:
+
+- Möglichkeiten überlegen, wie unser Game schöner aussehen könnte (Einfügen von Bildern etc.)
+- Git branch auf den neuesten Stand bringen
+- Baco im Umgang mit Swing unterstützen
+
+
+Baco übernimmt das Implementieren mit Hilfe von Swing:
+
+- ein Menü erstellen
+- Buttons erstellen und die Logik hinter den Buttons definieren
+
+
+Am Ende des Tages haben wir ein fertiges Snake Game mit folgenden Features:
+
+- Musik für alle Spielszenen
+- ein ohne Probleme laufendes Game
+- einen Score
+- ein Menü mit den Punkten "start game", "credits" und "exit"
+
+
+Ende Tag 2
+
