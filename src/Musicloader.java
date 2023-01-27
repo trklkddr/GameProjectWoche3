@@ -8,24 +8,27 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Musicloader {
 
     public static File sound;
-
-
-
     public static float value;
     public String pathname;
 
-    //private float mute = -100f;
+    public boolean creditMusicOn = false;
+
 
     Clip clip;
 
     public Musicloader() {
-        value = -10f; //Hier wird die Lautstärke eingestellt
+        value = -25f; //Hier wird die Lautstärke eingestellt
     }
 
 
     //METHODEN FÜR DAS LADEN DER JEWEILIGEN SOUNDS
     public void loadMenuMusic() { //MENUMUSIC
         sound = new File("sounds\\Menu Songs\\MenuSong - classic.wav");
+        play(sound);
+        clip.loop(2);
+    }
+    public void loadMainMenuMusic() { //MENUMUSIC
+        sound = new File("sounds\\Menu Songs\\MainMenu.wav");
         play(sound);
         clip.loop(2);
     }
@@ -64,6 +67,14 @@ public class Musicloader {
         sound = new File(randomizer());
         play(sound);
         clip.loop(2);
+        creditMusicOn = true;
+    }
+
+    public void stopWAVinCreditMusic() { //STOPWAV
+        if (creditMusicOn == true) {
+            stopWAV();
+            creditMusicOn = false;
+        } else loadCreditMusic();
     }
 
     public void stopWAV() { //STOPWAV
@@ -116,8 +127,5 @@ public class Musicloader {
 
     }
 
-    public void setValue(float value) {
-        Musicloader.value = value;
-    }
 
 }
