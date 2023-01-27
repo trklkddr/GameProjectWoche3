@@ -8,6 +8,11 @@ public class Buttons {
         // Erstellen eines neuen JFrames
         JFrame frame = new JFrame("Snake");
 
+        ImageIcon image = new ImageIcon("C:\\Users\\BacdaschZafaryar\\Woche3\\Tag2_Dienstag_24.01.2023\\Rettan_SnakeGame.png");
+        JLabel label = new JLabel(image);
+        label.setPreferredSize(new Dimension(image.getIconWidth(), image.getIconHeight()));
+        frame.getContentPane().add(label, BorderLayout.CENTER);
+
         // Erstellen Sie zwei Buttons mit den Namen "Start Game" und "Exit"
         JButton openButton = new JButton("Start Game");
         JButton exitButton = new JButton("Exit");
