@@ -7,7 +7,7 @@ public class Menue {
         // Erstellen eines neuen JFrames
         JFrame frame = new JFrame("Snake");
 
-        ImageIcon image = new ImageIcon("Images\\Rettan_SnakeGame.png");
+        ImageIcon image = new ImageIcon("Images/Rettan_SnakeGame.png");
         JLabel label = new JLabel(image);
         label.setPreferredSize(new Dimension(image.getIconWidth(), image.getIconHeight()));
         frame.getContentPane().add(label, BorderLayout.CENTER);
