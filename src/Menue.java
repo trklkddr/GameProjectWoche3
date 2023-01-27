@@ -1,10 +1,9 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Buttons {
-    public static void gameMenue() {
+public class Menue {
+    public static void startMenue() {
         // Erstellen eines neuen JFrames
         JFrame frame = new JFrame("Snake");
 
@@ -54,6 +53,7 @@ public class Buttons {
                 tamayoButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        musicloaderCreditMusic.stopWAV();
                         frame.setVisible(false); //Musik müsste hier stoppen, wenn Fenster geschlossen wird
                     }
                 });

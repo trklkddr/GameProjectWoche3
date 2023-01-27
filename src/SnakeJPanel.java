@@ -11,28 +11,23 @@ public class SnakeJPanel extends JPanel implements ActionListener {
     Musicloader musicloaderGameOverSound = new Musicloader();
     Musicloader musicloaderMenueMusic = new Musicloader();
 
-
+    Timer timer;
+    Random random;
     static final int SpielBreite = 550;
     static final int SpielHoehe = 550;
     static final int SpielEinheitGroesse = 25;
-    Timer timer;
-    Random random;
+    static final int SpielGroesse = (SpielBreite * SpielHoehe) / (SpielEinheitGroesse * SpielEinheitGroesse);
+    private int snakeGroesse = 2;
     private int score;
     private int food_x;
     private int food_y;
-    private int snakeGroesse = 2;
-    private int fontHeight;
     private boolean firstRun = true;
-    boolean SpielLaeuft = false;
-    char richtung = 'R';
-    static final int verzoegerung = 80;
-    static final int SpielGroesse = (SpielBreite * SpielHoehe) / (SpielEinheitGroesse * SpielEinheitGroesse);
+    private boolean SpielLaeuft = false;
+
     final int snake_x[] = new int[SpielGroesse];
     final int snake_y[] = new int[SpielGroesse];
 
-    public int getFontHeight() {
-        return fontHeight;
-    }
+
 
     SnakeJPanel() {
         this.setPreferredSize(new Dimension(SpielBreite, SpielHoehe));
@@ -42,6 +37,7 @@ public class SnakeJPanel extends JPanel implements ActionListener {
     }
 
     public void spielStart() {
+        final int verzoegerung = 80;
         foodPosition();
         SpielLaeuft = true;
         timer = new Timer(verzoegerung, this);
@@ -66,7 +62,7 @@ public class SnakeJPanel extends JPanel implements ActionListener {
                 }
             }
             FontMetrics font_me = getFontMetrics(graphic.getFont());
-            fontHeight = getFontMetrics(graphic.getFont()).getHeight();
+            //int fontHeight = getFontMetrics(graphic.getFont()).getHeight();
             graphic.drawString("Score:" + score, SpielBreite - font_me.stringWidth("Score:" + score) - SpielEinheitGroesse, SpielHoehe - SpielEinheitGroesse + 20);
             graphic.fillRect(0, 0, SpielBreite - SpielEinheitGroesse, SpielEinheitGroesse / 4);
             graphic.fillRect(0, SpielHoehe - SpielEinheitGroesse, SpielBreite - SpielEinheitGroesse, SpielEinheitGroesse / 4);
@@ -74,13 +70,15 @@ public class SnakeJPanel extends JPanel implements ActionListener {
             graphic.fillRect(SpielBreite - SpielEinheitGroesse, 0, SpielEinheitGroesse / 4, SpielHoehe - SpielEinheitGroesse);
 
         } else if (firstRun) {
-            startMenue(graphic);
+            preGameMenue(graphic);
             firstRun = false;
         } else {
             gameOver(graphic);
         }
 
     }
+
+    char richtung = 'R';
 
     public void move() {
         for (int i = snakeGroesse; i > 0; i--) {
@@ -145,7 +143,7 @@ public class SnakeJPanel extends JPanel implements ActionListener {
         }
     }
 
-    public void startMenue(Graphics graphic) {
+    public void preGameMenue(Graphics graphic) {
         graphic.setFont(new Font("", Font.BOLD, 40));
         FontMetrics font_me3 = getFontMetrics(graphic.getFont());
         graphic.drawString("Press space to start", (SpielBreite - font_me3.stringWidth("Press Space to start")) / 2, SpielHoehe / 2 - 150);
@@ -169,46 +167,47 @@ public class SnakeJPanel extends JPanel implements ActionListener {
 
     }
 
-    public class MyKey extends KeyAdapter {
-        @Override
-        public void keyPressed(KeyEvent e) {
-            switch (e.getKeyCode()) {
-                case KeyEvent.VK_LEFT:
-                    if (richtung != 'R') {
-                        richtung = 'L';
-                    }
-                    break;
-                case KeyEvent.VK_UP:
-                    if (richtung != 'D') {
-                        richtung = 'U';
-                    }
-                    break;
-                case KeyEvent.VK_RIGHT:
-                    if (richtung != 'L') {
-                        richtung = 'R';
-                    }
-                    break;
-                case KeyEvent.VK_DOWN:
-                    if (richtung != 'U') {
-                        richtung = 'D';
-                    }
-                    break;
-                case KeyEvent.VK_SPACE:
-                    if (!SpielLaeuft) {
-                        score = 0;
-                        snakeGroesse = 2;
-                        richtung = 'R';
-                        Arrays.fill(snake_x, 0);
-                        Arrays.fill(snake_y, 0);
-                        spielStart();
-                        musicloaderMenueMusic.stopWAV();
-                        musicloader.loadStartSound();
-                        musicloaderGameMusic.loadGameMusic();
-                    }
-                    break;
+
+        public class MyKey extends KeyAdapter {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                switch (e.getKeyCode()) {
+                    case KeyEvent.VK_LEFT:
+                        if (richtung != 'R') {
+                            richtung = 'L';
+                        }
+                        break;
+                    case KeyEvent.VK_UP:
+                        if (richtung != 'D') {
+                            richtung = 'U';
+                        }
+                        break;
+                    case KeyEvent.VK_RIGHT:
+                        if (richtung != 'L') {
+                            richtung = 'R';
+                        }
+                        break;
+                    case KeyEvent.VK_DOWN:
+                        if (richtung != 'U') {
+                            richtung = 'D';
+                        }
+                        break;
+                    case KeyEvent.VK_SPACE:
+                        if (!SpielLaeuft) {
+                            score = 0;
+                            snakeGroesse = 2;
+                            richtung = 'R';
+                            Arrays.fill(snake_x, 0);
+                            Arrays.fill(snake_y, 0);
+                            spielStart();
+                            musicloaderMenueMusic.stopWAV();
+                            musicloader.loadStartSound();
+                            musicloaderGameMusic.loadGameMusic();
+                        }
+                        break;
+                }
             }
         }
-    }
 
     @Override
     public void actionPerformed(ActionEvent arg0) {
@@ -219,5 +218,4 @@ public class SnakeJPanel extends JPanel implements ActionListener {
         }
         repaint();
     }
-
 }
