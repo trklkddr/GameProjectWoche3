@@ -7,7 +7,7 @@ public class Menue {
         // Erstellen eines neuen JFrames
         JFrame frame = new JFrame("Snake");
 
-        //Initialisieren eines Musicloaderobjektes
+        //Initialisieren eines Musicloaderobjektes für die Hauptmenumusik
         Musicloader musicloaderMainMenuMusic = new Musicloader();
         musicloaderMainMenuMusic.loadMainMenuMusic();
 
