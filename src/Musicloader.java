@@ -27,6 +27,11 @@ public class Musicloader {
         play(sound);
         clip.loop(2);
     }
+    public void loadMainMenuMusic() { //MENUMUSIC
+        sound = new File("sounds\\Menu Songs\\MainMenu.wav");
+        play(sound);
+        clip.loop(2);
+    }
 
     public void loadGameMusic() { //INGAMEMUSIC
         sound = new File("sounds\\Game Songs\\GameSongfinalfinal.wav");

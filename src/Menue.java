@@ -7,10 +7,15 @@ public class Menue {
         // Erstellen eines neuen JFrames
         JFrame frame = new JFrame("Snake");
 
+        //Initialisieren eines Musicloaderobjektes
+        Musicloader musicloaderMainMenuMusic = new Musicloader();
+        musicloaderMainMenuMusic.loadMainMenuMusic();
+
         // Erstellen Sie zwei Buttons mit den Namen "Start Game" und "Exit"
         JButton openButton = new JButton("Start Game");
         JButton exitButton = new JButton("Exit");
         JButton creditButton = new JButton("Credits");
+
 
 
         //  ActionListener für den "" Button, der beim Klicken auf den Button ausgelöst wird
@@ -18,6 +23,7 @@ public class Menue {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
+                musicloaderMainMenuMusic.stopWAV();
                 new Snake();
                 // An dieser Stelle soll Tariks Spiel implementiert werden
                /* JFrame newFrame = new JFrame("New Window");
@@ -31,6 +37,7 @@ public class Menue {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                musicloaderMainMenuMusic.stopWAV();
                 System.exit(0);
             }
         });
@@ -39,6 +46,7 @@ public class Menue {
             public void actionPerformed(ActionEvent e) {
                 //Logik, was soll passieren, wenn ich auf den Credits Button klicke?
                 Musicloader musicloaderCreditMusic = new Musicloader();
+                musicloaderMainMenuMusic.stopWAV();
                 musicloaderCreditMusic.loadCreditMusic();
                 JFrame frame = new JFrame("Credits");
                 frame.setSize(300, 300);
@@ -54,6 +62,7 @@ public class Menue {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         musicloaderCreditMusic.stopWAV();
+                        musicloaderMainMenuMusic.loadMainMenuMusic();
                         frame.setVisible(false); //Musik müsste hier stoppen, wenn Fenster geschlossen wird
                     }
                 });
